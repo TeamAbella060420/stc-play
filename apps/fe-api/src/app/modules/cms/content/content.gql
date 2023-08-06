@@ -1,0 +1,39 @@
+type StaticPageResponse {
+  is_successful: Boolean,
+  error_code: String,
+  error_msg: String,
+  data: StaticPageData
+}
+
+type StaticPageData {
+  static_page_id: Int,
+  page_code: String,
+  content: String,
+  created_at: String,
+  updated_at: String
+}
+
+type FAQsResponse {
+  is_successful: Boolean,
+  error_code: String,
+  error_msg: String,
+  data: [FAQsData]
+}
+
+type FAQsData {
+  faq_id: Int,
+  question: String,
+  answer: String,
+  created_at: String
+  updated_at: String
+}
+
+input ContentInput {
+  page_code: String
+}
+
+
+type Query {
+  getStaticPage(details: ContentInput):  StaticPageResponse,
+  getFaqs:  FAQsResponse
+}

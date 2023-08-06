@@ -1,0 +1,19 @@
+type StatisticsData 
+{
+  active_tournaments: Int,
+  active_participants: Int,
+  active_prizes: Int
+}
+
+type StatisticsResponse
+{
+  is_successful: Boolean,
+  error_code: String,
+  error_msg: String,
+  data: StatisticsData
+}
+
+type Query 
+{
+  getAllTournamentStatistecs: StatisticsResponse,  
+}

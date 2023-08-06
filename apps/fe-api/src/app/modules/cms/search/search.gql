@@ -1,0 +1,123 @@
+
+type SearchResponse {
+  is_successful: Boolean,
+  error_code: String,
+  error_msg: String,
+  data: [SearchData]
+}
+
+type GlobalSearchResponse {
+  is_successful: Boolean,
+  error_code: String,
+  error_msg: String,
+  data: GlobalSearchData
+}
+
+type SearchInfoResponse {
+  is_successful: Boolean,
+  error_code: String,
+  error_msg: String,
+  data: [GlobalData]
+}
+
+type GlobalSearchData {
+  shop: ResultData,
+  users: ResultData,
+  teams: ResultData,
+  tournaments: ResultData,
+  bits: ResultData,
+  streams: ResultData
+}
+
+type ResultData {
+  total: Int
+  result: [GlobalData]
+}
+
+type GlobalData {
+    id: String,
+    type: String,
+    title: String,
+    number_of_likes: Int,
+    views: Int,
+    combination_id: Int,
+    description: String,
+    img: String,
+    game_code: String,
+    is_official_account: Int,
+    viewer_is_self_user: Int,
+    viewer_is_following: Int,
+    total_followers: Int,
+    breadcrumbs: [String],
+    product_rating: Float,
+    total_raters: Int,
+    is_live: Int,
+    grand_total: Float,
+    total_price: Float,
+    last_cursor: Cursor,
+    pagination: String
+}
+
+
+type SearchData {
+  id: String,
+  img: String,
+  title: String,
+  type: String,
+  is_official_account: Int,
+  breadcrumbs: [String],
+  snapshot: String,
+  views: Int,
+  likes: Int,
+  desc: String,
+  followers: Int,
+  last_cursor: Cursor,
+  pagination: String
+}
+
+type SearchHistoryResponse {
+  is_successful: Boolean,
+  error_code: String,
+  error_msg: String,
+  data: [SearchHistoryData]
+}
+
+type SearchHistoryData {
+  search_id: Int,
+  name: String,
+  created_at: String
+}
+
+input SearchInput {
+  name: String,
+  search_id: Int,
+  identifier: String,
+  direction: String,
+  pagination: String,
+  type: String
+}
+
+type Cursor {
+  combination_id: Int,
+  product_id: Int
+}
+
+type ClearAllSearchResponse {
+  is_successful: Boolean,
+  error_code: String,
+  error_msg: String
+}
+
+type Query {
+  getGlobalSearch(details: SearchInput):  GlobalSearchResponse,
+  getSearchInfo(details: SearchInput):  SearchInfoResponse,
+  getAllSearchHistory: SearchHistoryResponse,  
+  getAllSearch: SearchResponse,
+  getSearchHistory: SearchResponse
+}
+
+type Mutation {
+  saveSearchHistory(details: SearchInput): SearchHistoryResponse,
+  clearSearchHistory(details: SearchInput): SearchHistoryResponse,
+  clearAllSearchHistory: ClearAllSearchResponse
+}

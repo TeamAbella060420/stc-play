@@ -1,0 +1,44 @@
+type GetAllProductResponseProps {
+  product_id: Int
+  is_preorder: Int
+  name_en: String
+  name: String
+  is_tax_applicable: Int
+  description_en: String
+  details_en: String
+  usage_instructions_en: String
+  quantity: Int
+  number_of_likes: Int
+  is_digital: Int
+  sort_id: Int
+  category_id: Int
+  sku: String
+  media: [String]
+  unit_price: Float
+  discount_rate: Int
+  discount_price: Int
+  total_price: Float
+  total_tax: Float
+  grand_total: Float
+  combination_id: Int
+  lowest_grand_total: Float
+}
+
+type QueryProductResponseProps {
+  is_successful: Boolean
+  error_code: String
+  error_msg: String
+  data: [GetAllProductResponseProps]
+}
+
+input ProductInput {
+  category_id: Int
+  timestamp: String
+  page_number: Int
+  is_digital: Int
+  is_active: Int
+}
+
+type Query {
+  getAllProduct(details: ProductInput): QueryProductResponseProps
+}

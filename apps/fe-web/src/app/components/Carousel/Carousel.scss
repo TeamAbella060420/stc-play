@@ -1,0 +1,24 @@
+.scroll-container {
+    &__left {
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5%;
+            height: 100%;
+            z-index: 10;
+        }
+    }
+    &__right {
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 5%;
+            height: 100%;
+            z-index: 10;
+        }
+    }
+}

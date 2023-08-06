@@ -1,0 +1,48 @@
+{
+    "project_info": {
+      "project_number": "503882650732",
+      "firebase_url": "https://xplay-prod-default-rtdb.firebaseio.com",
+      "project_id": "xplay-prod",
+      "storage_bucket": "xplay-prod.appspot.com"
+    },
+    "client": [
+      {
+        "client_info": {
+          "mobilesdk_app_id": "1:503882650732:android:81e05b4d0bb245856cf449",
+          "android_client_info": {
+            "package_name": "com.stc.xplay"
+          }
+        },
+        "oauth_client": [
+          {
+            "client_id": "503882650732-un9bdvtc38rniec7k66v7kdbcfrq8igh.apps.googleusercontent.com",
+            "client_type": 3
+          }
+        ],
+        "api_key": [
+          {
+            "current_key": "AIzaSyDir3Mice8AqCzvchhOW3ivuaQPOSyzJBg"
+          }
+        ],
+        "services": {
+          "appinvite_service": {
+            "other_platform_oauth_client": [
+              {
+                "client_id": "503882650732-un9bdvtc38rniec7k66v7kdbcfrq8igh.apps.googleusercontent.com",
+                "client_type": 3
+              },
+              {
+                "client_id": "503882650732-oaa08j9ju84ss2q290bgqe4r0pqoccca.apps.googleusercontent.com",
+                "client_type": 2,
+                "ios_info": {
+                  "bundle_id": "com.stc.xplay",
+                  "app_store_id": "1558331986"
+                }
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "configuration_version": "1"
+  }

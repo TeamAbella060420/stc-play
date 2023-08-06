@@ -1,0 +1,21 @@
+
+type CountryResponse {
+  is_successful: Boolean,
+  error_code: String,
+  error_msg: String,
+  data: [CountryData]
+}
+
+type CountryData {
+  name: String,
+  country_code_iso_2: String,
+  country_code_iso_3: String,
+  phone_code_iso: String,
+  phone_number_length: Int,
+  is_otp_required: Int
+}
+
+type Query {
+  countries: CountryResponse,
+  servedCountrie: CountryResponse
+}

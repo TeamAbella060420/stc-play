@@ -1,0 +1,33 @@
+type WalletResponse {
+  is_successful: Boolean
+  error_code: String
+  error_msg: String
+  data: WalletList
+}
+
+
+type LogoutResponse {
+  is_successful: Boolean,
+  error_code: String,
+  error_msg: String
+}
+
+
+type WalletList {
+  list: [WalletData]
+}
+
+type WalletData {
+  entity_type: String
+  total_balance: String
+  refrance_country_code: String
+  wallet_id: String
+}
+
+type Query {
+  getWallet: WalletResponse
+}
+
+type Mutation {
+  logout: LogoutResponse,
+}

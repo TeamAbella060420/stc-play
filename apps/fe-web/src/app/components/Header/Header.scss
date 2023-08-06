@@ -1,0 +1,21 @@
+@import '../../assets/css//variables.scss';
+
+
+.cmp-guest-profile {
+    .search {
+        path {
+            stroke: $color-white-50;
+        }
+    }
+}
+
+.mobile-height {
+    height: 100vh;
+    height: -moz-available;          /* WebKit-based browsers will ignore this. */
+    height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    height: fill-available;
+}
+
+.animate__animated.animate__fadeInRight, .animate__fadeIn, .animate__fadeOut, .animate__fadeOutRight, .animate__fadeInUp {
+    --animate-duration: 0.300s;
+}

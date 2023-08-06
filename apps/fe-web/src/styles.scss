@@ -1,0 +1,354 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import './app//assets/css/animate.min.scss';
+@layer base
+{
+
+  @font-face
+  {
+    font-family: "STCForward-Bold";
+    src: url("../../../libs/assets/src/fonts/STCForward-Bold.ttf");
+  }
+}
+
+@layer base
+{
+  @font-face
+  {
+    font-family: "STCForward-BoldItalic";
+    src: url("../../../libs/assets/src/fonts/STCForward-BoldItalic.ttf");
+  }
+}
+
+@layer base
+{
+  @font-face
+  {
+    font-family: "STCForward-ExtraBold";
+    src: url("../../../libs/assets/src/fonts/STCForward-ExtraBold.ttf");
+  }
+}
+
+@layer base
+{
+  @font-face
+  {
+    font-family: "STCForward-ExtraBoldItalic";
+    src: url("../../../libs/assets/src/fonts/STCForward-ExtraBoldItalic.ttf");
+  }
+}
+
+@layer base
+{
+  @font-face
+  {
+    font-family: "STCForward-Italic";
+    src: url("../../../libs/assets/src/fonts/STCForward-Italic.ttf");
+  }
+}
+
+
+@layer base
+{
+  @font-face
+  {
+    font-family: "STCForward-Light";
+    src: url("../../../libs/assets/src/fonts/STCForward-Light.ttf");
+  }
+}
+
+
+@layer base
+{
+  @font-face
+  {
+    font-family: "STCForward-LightItalic";
+    src: url("../../../libs/assets/src/fonts/STCForward-LightItalic.ttf");
+  }
+}
+
+@layer base
+{
+  @font-face
+  {
+    font-family: "STCForward-Medium";
+    src: url("../../../libs/assets/src/fonts/STCForward-Medium.ttf");
+  }
+}
+
+@layer base
+{
+  @font-face
+  {
+    font-family: "STCForward-MediumItalic";
+    src: url("../../../libs/assets/src/fonts/STCForward-MediumItalic.ttf");
+  }
+}
+
+@layer base
+{
+  @font-face
+  {
+    font-family: "STCForward-Regular";
+    src: url("../../../libs/assets/src/fonts/STCForward-Regular.ttf");
+  }
+}
+
+@layer base
+{
+  @font-face
+  {
+    font-family: "STCForward-Thin";
+    src: url("../../../libs/assets/src/fonts/STCForward-Thin.ttf");
+  }
+}
+
+
+@layer base
+{
+  @font-face
+  {
+    font-family: "STCForward-ThinItalic";
+    src: url("../../../libs/assets/src/fonts/STCForward-ThinItalic.ttf");
+  }
+}
+
+/* You can add global styles to this file, and also import other style files */
+html,
+body,
+:root {
+  height: 100vh;
+  height: -moz-available;          /* WebKit-based browsers will ignore this. */
+  height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+  height: fill-available;
+}
+
+*
+{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar
+{
+  display: none;
+}
+
+.underline-ltr-animation
+{
+  position: relative;
+}
+
+.underline-ltr-animation::after
+{
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  left: 0;
+  transform-origin: bottom left;
+  transition: transform 0.25s ease-out;
+}
+
+.underline-ltr-animation:hover::after
+{
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.underline-rtl-animation
+{
+  position: relative;
+}
+
+.underline-rtl-animation::after
+{
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  left: 0;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.underline-rtl-animation:hover::after
+{
+  transform: scaleX(1);
+  transform-origin: bottom right;
+}
+
+
+.button-animation-ltr
+{
+  display: inline-block;
+  transition: all .6s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &:after
+  {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+  }
+  &:before
+  {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    transition: all .6s;
+    z-index: -1;
+  }
+  &:hover
+  {
+    &:before
+    {
+      width: 100%;
+    }
+  }
+}
+
+.button-animation-rtl
+{
+  display: inline-block;
+  transition: all .6s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &:after
+  {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    z-index: -2;
+  }
+  &:before
+  {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .6s;
+    z-index: -1;
+  }
+  &:hover
+  {
+    &:before
+    {
+      width: 0%;
+    }
+  }
+  &::after
+    {
+      width: 100%;
+    }
+}
+
+@keyframes float-1rem
+{
+	0%
+  {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-1rem);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+@keyframes float-13rem
+{
+	0%
+  {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-13rem);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+.floating-animation-1
+{
+	overflow: hidden;
+	transform: translatey(0px);
+	animation: float-1rem 6s ease-in-out infinite;
+}
+.floating-animation-2
+{
+	overflow: hidden;
+	transform: translatey(0px);
+	animation: float-13rem 9s ease-in-out infinite;
+}
+
+.floating-animation-3
+{
+	overflow: hidden;
+	transform: translatey(0px);
+	animation: float-1rem 4s ease-in-out infinite;
+}
+
+
+@media (max-width: 640px)
+{
+	@keyframes float-13rem
+{
+	0%
+  {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-5rem);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+}
+
+.Typewriter {
+  display: inline-block;
+}
+
+@keyframes fadeIn {
+  from {
+     opacity: 0;
+  }
+  to {
+     opacity: 1;
+  }
+}
+
+.fade-in-text {
+ opacity: 0;
+ animation: fadeIn ease-in 1;
+ animation-fill-mode: forwards;
+ animation-duration: 1s;
+}
+.fade-in-text2 
+{
+ opacity: 0;
+ animation: fadeIn ease-in 1;
+ animation-fill-mode: forwards;
+ animation-duration: 1s;
+}

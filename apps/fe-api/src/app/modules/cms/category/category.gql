@@ -1,0 +1,33 @@
+
+type SubCategories {
+  category_id: Int,
+  category_seo_code: String,
+  img: String,
+  name_en: String,
+  name: String,
+  sort_id: Int,
+  parent_category_id: Int
+}
+
+type GetAllCategoryResponseProps {
+    category_id: Int,
+    category_seo_code: String,
+    name_en: String,
+    name: String,
+    sort_id: Int,
+    img: String,
+    created_at: String,
+    parent_category_id: Int,
+    sub_categories: [SubCategories]
+}
+
+type QueryResponseProps {
+    is_successful: Boolean,
+    error_code: String,
+    error_msg: String,
+    data: [GetAllCategoryResponseProps]
+}
+
+type Query {
+  getAllCategory: QueryResponseProps,
+}

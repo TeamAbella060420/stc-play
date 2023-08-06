@@ -1,0 +1,42 @@
+type TournamentData
+{
+  tournament_id: Int,
+  section_id: Int,
+  is_team_based: Int,
+  name: String,
+  is_paid: Int,
+  status_code: String,
+  registration_start_date: String,
+  registration_end_date: String,
+  tournament_start_date: String,
+  max_number_of_participants: Int,
+  total_number_of_participants: Int,
+  banner_url: String,
+  reference_bracket_code: String,
+  hosted_by: String,
+  team_size: Int,
+  registration_fee: Float,
+  platforms: [String],
+  prize: Float
+}
+
+type SectionData
+{
+  section_code: String,
+  name: String,
+  list: [TournamentData]
+  sort_id: Int
+}
+
+type SectionResponse
+{
+  is_successful: Boolean,
+  error_code: String,
+  error_msg: String,
+  data: [SectionData]
+}
+
+type Query
+{
+  getAllTournamentSections: SectionResponse,
+}

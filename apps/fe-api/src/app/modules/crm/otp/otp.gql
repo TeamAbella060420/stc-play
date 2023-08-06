@@ -1,0 +1,27 @@
+input OtpInput {
+  type: String,
+  endpoint: String,
+  channel: String,
+  otp: String,
+  email: String,
+  username: String
+  token: String
+}
+
+type OtpResponse {
+  is_successful: Boolean,
+  error_code: String,
+  error_msg: String,
+  data: OtpData
+}
+
+type OtpData {
+  token: String
+  email: String
+}
+
+type Mutation {
+  requestOTP(details: OtpInput): OtpResponse,
+  verifyOTP(details: OtpInput): OtpResponse
+  requestResetPasswordOTP(details: OtpInput): OtpResponse
+}

@@ -1,0 +1,31 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "resolveJsonModule": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@fe-monorepo/assets": ["libs/assets/src/index.ts"],
+      "@fe-monorepo/components": ["libs/components/src/index.ts"],
+      "@fe-monorepo/data-access": ["libs/data-access/src/index.ts"],
+      "@fe-monorepo/helper": ["libs/helper/src/index.ts"],
+      "@fe-monorepo/hooks": ["libs/hooks/src/index.ts"],
+      "@fe-monorepo/lang": ["libs/lang/index.ts"],
+      "@fe-monorepo/models": ["libs/models/src/index.ts"],
+      "@fe-monorepo/store": ["libs/store/src/index.ts"],
+      "@fe-monorepo/themes": ["libs/themes/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

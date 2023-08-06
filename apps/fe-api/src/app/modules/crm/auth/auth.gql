@@ -1,0 +1,157 @@
+
+type LoginResponse {
+  is_successful: Boolean,
+  error_code: String,
+  error_msg: String,
+  data: LoginData
+}
+
+
+type LoginData {
+  token: String,
+  is_email_verified: Int,
+  is_mobile_verified: Int,
+  is_2FA_required: Int,
+  is_password_update_required: Int,
+  regesteration_persona: String,
+  is_mobile_update_required: Int,
+  identifier: String
+}
+
+input LoginInput {
+    password: String
+    identifier: String
+    endpoint: String
+    channel: String
+    advertisement_id: String
+    provider: String
+    type: String
+}
+
+
+
+type AccessLinkResponse {
+  is_successful: Boolean,
+  error_code: String,
+  error_msg: String,
+  data: AccessLinkData,
+}
+
+
+type AccessLinkData {
+  url: String,
+  oauth_token: String,
+  oauth_token_secret: String,
+  oauth_callback_confirmed: String
+}
+
+
+type SignUpResponse {
+  is_successful: Boolean,
+  error_code: String,
+  error_msg: String,
+  data: SignUpData,
+}
+
+input SignUpInput {
+    email: String,
+    mobile: String,
+    username: String,
+    password: String,
+    endpoint: String,
+    channel: String,
+    mobile_code: String,
+    regesteration_persona: String,
+    display_name: String,
+    country_code: String,
+    referral_code: String
+}
+
+type SignUpData {
+  token: String,
+  identifier: String,
+  is_2FA_required: Int,
+  preferred_theme: String
+}
+
+type AppleSignupResponse {
+  is_successful: Boolean,
+  error_code: String,
+  error_msg: String,
+  data: AppleSignUpData,
+}
+
+input AppleSignupInput {
+  code: String,
+  username: String
+}
+
+type AppleSignUpData {
+  token: String,
+  username: String,
+  identifier: String,
+  is_username_update_required: Int,
+  is_2FA_required: Int,
+  preferred_theme: String
+}
+
+type AppleLoginResponse {
+  is_successful: Boolean,
+  error_code: String,
+  error_msg: String,
+  data: AppleLoginData,
+}
+
+input AppleLoginInput {
+    code: String
+}
+
+type AppleLoginData {
+  token: String,
+  username: String,
+  identifier: String,
+  is_username_update_required: Int,
+  is_2FA_required: Int,
+  preferred_theme: String
+}
+
+input LockDurationInput {
+    type: String,
+    username: String,
+}
+
+type LockDurationResponse {
+  is_successful: Boolean,
+  error_code: String,
+  error_msg: String,
+  data: LockDurationData
+}
+
+type LockDurationData {
+  time_remaining: Float,
+}
+
+type CommonResponse {
+  is_successful: Boolean,
+  error_code: String,
+  error_msg: String,
+  data: SignUpData
+}
+
+type Mutation {
+  login(details: LoginInput): LoginResponse,
+  createAccessLink(details: LoginInput): AccessLinkResponse,
+  signup(details: SignUpInput): SignUpResponse,
+  appleSignup(details: AppleSignupInput): AppleSignupResponse,
+  appleSignin(details: AppleLoginInput): AppleLoginResponse,
+  isValidCurrentPassword(details: SignUpInput): CommonResponse
+}
+
+type Query {
+  isUserFoundByEmail(details: SignUpInput): CommonResponse,
+  isUserFoundByUsername(details: SignUpInput): CommonResponse
+  isUserFoundByMobile(details: SignUpInput): CommonResponse
+  isMobileAvailable(details: SignUpInput): CommonResponse
+  isValidReferral(details: SignUpInput): CommonResponse
+  lockDuration(details: LockDurationInput): LockDurationResponse
+}

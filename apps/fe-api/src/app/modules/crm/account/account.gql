@@ -1,0 +1,84 @@
+type AccountResponse {
+  is_successful: Boolean
+  error_code: String
+  error_msg: String
+  data: AccountData
+}
+
+type FollowResponse {
+  is_successful: Boolean
+  error_code: String
+  error_msg: String
+}
+
+type AccountData {
+  username: String
+  display_name: String
+  bio: String
+  points: Int
+  avatar_url: String
+  gender_code: String
+  mobile_code: String
+  is_official_account: Int
+  regesteration_persona: String
+  email: String
+  mobile: String
+  gamer_type: String
+  token: String
+  total_followers: String
+  total_following: String
+  password_updated_at: String
+}
+
+input AccountInput {
+  email: String
+  mobile: String
+  username: String
+  password: String
+  is_2FA_required: Int
+  old_password: String
+  new_password: String
+  token: String
+  preferred_language: String
+  preferred_currency: String
+  preferred_theme: String
+}
+
+input AccountInputObject {
+  account_data: AccountInput
+}
+
+input AddressInput {
+  name: String
+  address_id: Int
+  mobile: String
+  mobile_code: String
+}
+
+input PersonalizeQuestionnaireInput {
+  personal_questionnaire_code: Int
+}
+
+type PersonalizeQuestionnaireResponse {
+  is_successful: Boolean
+  error_code: String
+  error_msg: String
+}
+
+type Mutation {
+  editAccount(details: AccountInput): AccountResponse
+  submitPersonalizationQuestionnaire(details: PersonalizeQuestionnaireInput): PersonalizeQuestionnaireResponse
+  followUser(details: AccountInput): FollowResponse
+  unfollowUser(details: AccountInput): FollowResponse
+  updateAddress(details: AddressInput): AccountResponse
+  updatePassword(details: AccountInput): AccountResponse
+  resetPasswordByOtp(details: AccountInput): AccountResponse
+  updateProfile(details: AccountInputObject): AccountResponse
+  updateUsername(details: AccountInput): AccountResponse
+  updateSettings(details: AccountInput): AccountResponse
+}
+
+type Query {
+  getInfoByUsername(details: AccountInput): AccountResponse
+  getUserProfileInfo: AccountResponse
+}
