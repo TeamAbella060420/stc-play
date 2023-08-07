@@ -11,7 +11,7 @@ export const getEnvironment = () => {
   let basicAuthPassword = ''
 
   //added condition for mobile
-  const environment = (process.env.NX_APP_ENVIRONMENT) ? process.env.NX_APP_ENVIRONMENT : Config.NX_APP_ENVIRONMENT
+  const environment = process.env.NX_APP_ENVIRONMENT
   
   switch (environment) {
 
