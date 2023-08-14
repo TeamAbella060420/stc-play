@@ -27,7 +27,7 @@ const HomePageShopSectionComponent = (props: shopSectionProps) => {
   const innerWidth = useHeaderState().innerWidth;
 
   const goToShopPage = () => {
-    navigate('/');
+    navigate('/shop');
   };
 
   const dir = prefs?.language === 'en' ? `ltr` : `rtl`;
