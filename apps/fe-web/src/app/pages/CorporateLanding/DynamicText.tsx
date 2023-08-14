@@ -4,7 +4,7 @@ import TypeWriter from '../../components/TypeWriter';
 const DynamicTextComponent = () => {
   const { pauseSpeed, t, prefs, isHighlighted } = useDynamicTextState();
 
-  const words = [t('common_gaming'), t('common_competition'), t('common_connecting'), t('common_shop')];
+  const words = [t('common_gaming'), t('common_competition'), t('common_connecting'), t('common_shop'), ('Abraham Flynn')];
   return (
     <div className="py-64 sm:py-120 5xl:py-203 8xl:py-490 z-[1]">
       <p className="block  break-keep text-mobileDynamic xl:text-xlargeDynamic 5xl:text-fiveKDynamic 8xl:text-eightKDynamic lg:tracking-[-1px] font-medium">
