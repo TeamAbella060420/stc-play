@@ -440,7 +440,7 @@ const SocialTimelineCard = (props: TimeLineType) => {
             </p>
             <div dir="ltr" className={`w-fit`}>
               <Text
-                divStyle={`font-light pt-20 sm:pt-32 text-sunset flex items-center rtl:flex-row-reverse hover:cursor-pointer underline-${dir}-animation after:bottom-[-0.5rem] after:bg-sunset
+                divStyle={`font-light pt-20 sm:pt-32  flex items-center rtl:flex-row-reverse hover:cursor-pointer underline-${dir}-animation after:bottom-[-0.5rem] after:bg-sunset
                                     text-mobileSubtitle 
                                     4xl:text-fourKSubtitle
                                     5xl:text-mobileDynamic
