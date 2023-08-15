@@ -6,6 +6,7 @@ interface CustomLabelProps
   label: string;
   Icon?: JSX.Element;
   dir?:"ltr" | "rtl"
+  onClick?: () => void | null | undefined;
 }
 
 const Text = (props: CustomLabelProps) => 
