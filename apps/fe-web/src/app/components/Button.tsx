@@ -9,6 +9,7 @@ interface buttonProps {
   normalStyle?: string,
   text: string;
   disabled?: boolean;
+  // eslint-disable-next-line @typescript-eslint/ban-types
   action?: Function;
   fullWidth?: boolean;
   isLoading?: boolean;
