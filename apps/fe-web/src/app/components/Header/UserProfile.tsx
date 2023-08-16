@@ -79,12 +79,13 @@ const UserProfile = () => {
             }
 
             {
-                isMobile && <div className='flex items-center justify-center flex-col gap-[12px]'>
+              isMobile && <div className='flex items-center justify-center flex-col gap-[12px]'>
                     <UserAvatar name={user?.avatar_url || user?.display_name} size='80'/>
                     <div className='font-regular text-secondary text-[24px]'>{user?.display_name}</div>
                     <div className='font-regular text-secondary/70 text-[16px]' dir='ltr'>@{user?.username}</div>
                 </div>
-            }
+                
+              }
         </>
     );
 }
