@@ -33,23 +33,19 @@ const Shop = () => {
   return (
     <section>
       <div className="w-full h-full px-6 border-b border-black-black-20 bg-white-white-100">
-      <Container className="flex w-1440 p-12 justify-between items-start bg-white-white-100 lg:px-[98px] md:px-40 sm:px-0 xsMax:px-0 xs:px-0 4xl:px-[120px] 4xl:gap-[71px] 4xl:py-[71px] 8xl:px-[522px] 8xl:gap-[213px] 8xl:py-[213px]">
-        <Button text={t('PlayStation')} onClick={toggleDropdown} />
-        <Button text="Xbox" />
-        <Button text="Nintendo" />
-        <Button text="PC gaming" />
-        <Button text="Collectables" />
-        <Button text="Digital cards" />
-        <Button text="Other" />
-        <Button text="Pre-order" />
-        <Button text="Trending, new and sale" />
-      </Container>
+        <Container className=" flex w-1440 p-12 justify-between items-start bg-white-white-100 lg:px-[98px] md:px-40 sm:px-0 xsMax:px-0 xs:px-0 4xl:px-[120px] 4xl:gap-[71px] 4xl:py-[71px] 8xl:px-[522px] 8xl:gap-[213px] 8xl:py-[213px]">
+          <Button text={t('PlayStation')} onClick={toggleDropdown} />
+          <Button text="Xbox" />
+          <Button text="Nintendo" />
+          <Button text="PC gaming" />
+          <Button text="Collectables" />
+          <Button text="Digital cards" />
+          <Button text="Other" />
+          <Button text="Pre-order" />
+          <Button text="Trending, new and sale" />
+        </Container>
       </div>
-      <div>
-      {isOpen && (
-        <PlayStation />
-      )}
-      </div>
+      <div>{isOpen && <PlayStation />}</div>
       <div
         className="w-full h-full px-6 
             py-40 relative 
