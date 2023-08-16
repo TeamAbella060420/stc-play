@@ -10,6 +10,8 @@ type SOCIALMEDIALINKTYPE = {
 }
 
 export const IMAGES: IImages = {
+  Crown: require('./images/Crown.png'),
+  Gadgets: require('./images/gadgets.png'),
   AppleStore: require('./images/applestore.png'),
   Avatar: require('./images/avatar.png'),
   BannerPlaceholder: require('./images/Banner Placeholder.png'),
