@@ -9,7 +9,7 @@ interface UseDialogToggleProps {
 }
 const useDialogToggle = create<UseDialogToggleProps>((set) => ({
     isOpen: {},
-    setIsOpen: (id: string, value: boolean) => set((state: UseDialogToggleProps) => ({isOpen: {...state.isOpen, [id]: value }})),
+    setIsOpen: (id: string, value: boolean) => set((state: UseDialogToggleProps) => ({ isOpen: { ...state.isOpen, [id]: value } })),
 }))
- 
+
 export default useDialogToggle;
