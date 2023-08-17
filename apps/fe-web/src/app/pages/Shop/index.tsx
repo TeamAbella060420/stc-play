@@ -6,6 +6,7 @@ import ShopHeader from './components/Header';
 import ShopContent from './Content';
 import { useTranslation } from 'react-i18next';
 import PlayStation from './components/PlayStation';
+import DropdownMenu from '../../components/DropdownMenu';
 
 const Shop = () => {
   const { t } = useTranslation();
@@ -32,17 +33,17 @@ const Shop = () => {
   };
   return (
     <section>
-      <div className="w-full h-full px-6 border-b border-black-black-20 bg-white-white-100">
-        <Container className=" flex w-1440 p-12 justify-between items-start bg-white-white-100 lg:px-[98px] md:px-40 sm:px-0 xsMax:px-0 xs:px-0 4xl:px-[120px] 4xl:gap-[71px] 4xl:py-[71px] 8xl:px-[522px] 8xl:gap-[213px] 8xl:py-[213px]">
-          <Button text={t('PlayStation')} onClick={toggleDropdown} />
-          <Button text="Xbox" />
-          <Button text="Nintendo" />
-          <Button text="PC gaming" />
-          <Button text="Collectables" />
-          <Button text="Digital cards" />
-          <Button text="Other" />
-          <Button text="Pre-order" />
-          <Button text="Trending, new and sale" />
+      <div className="w-full h-full px-6 border-b border-black-black-20 bg-primary">
+        <Container  className=" flex w-1440 p-12 justify-between items-start bg-primary lg:px-[98px] md:px-40 sm:px-0 xsMax:px-0 xs:px-0 4xl:px-[120px] 4xl:gap-[71px] 4xl:py-[71px] 8xl:px-[522px] 8xl:gap-[213px] 8xl:py-[213px]">
+          <Button className='text-secondary' text={t('PlayStation')} onClick={toggleDropdown} />
+          <Button className='text-secondary' text="Xbox" />
+          <Button className='text-secondary' text="Nintendo" />
+          <Button  className='text-secondary' text="PC gaming" />
+          <Button className='text-secondary' text="Collectables" />
+          <Button className='text-secondary' text="Digital cards" />
+          <Button className='text-secondary' text="Other" />
+          <Button className='text-secondary' text="Pre-order" />
+          <Button className='text-secondary' text="Trending, new and sale" />
         </Container>
       </div>
       <div>{isOpen && <PlayStation />}</div>
