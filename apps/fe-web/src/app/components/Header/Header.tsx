@@ -20,6 +20,7 @@ import { IconNames } from '@fe-monorepo/helper';
 import Icon from '../../common/Icon';
 
 export const RECENT_SEARCH_ID = 'header-recent-search';
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface HeaderProps {
 
 }
